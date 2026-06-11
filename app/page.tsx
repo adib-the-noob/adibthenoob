@@ -153,19 +153,19 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full overflow-x-clip">
       {/* Ice & Plasma — soft ambient glow centered above the page. */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-64 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,var(--glow-primary),transparent_70%)] blur-3xl"
       />
 
-      <main className="mx-auto w-full max-w-5xl px-6 pb-24">
+      <main className="mx-auto w-full max-w-5xl px-4 pb-24 sm:px-6">
         {/* Hero */}
-        <section className="flex flex-col items-start gap-8 pt-12 pb-20 sm:pt-20">
+        <section className="flex flex-col items-start gap-6 pt-10 pb-16 sm:gap-8 sm:pt-20 sm:pb-20">
           <Badge
             variant="secondary"
-            className="rounded-full border border-accent-cyan/30 bg-accent-cyan/5 px-3 py-1 font-mono text-foreground/80"
+            className="rounded-full border border-accent-cyan/30 bg-accent-cyan/5 px-3 py-1 font-mono text-[11px] text-foreground/80 sm:text-xs"
           >
             <span className="relative mr-1.5 flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-cyan/60" />
@@ -174,22 +174,24 @@ export default function Home() {
             open to staff &amp; senior backend roles
           </Badge>
 
-          <div className="flex items-center gap-5">
-            <Avatar className="size-16 ring-2 ring-border ring-offset-2 ring-offset-background">
+          <div className="flex items-center gap-4 sm:gap-5">
+            <Avatar className="size-14 ring-2 ring-border ring-offset-2 ring-offset-background sm:size-16">
               <AvatarImage src="/avatar.jpg" alt="Adib" />
               <AvatarFallback className="font-mono">AD</AvatarFallback>
             </Avatar>
             <div>
               <p className="text-sm text-muted-foreground">Hi, I&rsquo;m</p>
-              <p className="text-xl font-semibold">Adib</p>
+              <p className="text-lg font-semibold sm:text-xl">Adib</p>
             </div>
           </div>
 
-          <div className="space-y-5">
-            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl">
+          <div className="space-y-4 sm:space-y-5">
+            <h1 className="max-w-3xl text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-6xl">
               I build the systems
-              <br />
-              <span className="text-muted-foreground">that don&rsquo;t go down.</span>
+              <br className="hidden sm:inline" />
+              <span className="text-muted-foreground">
+                {" "}that don&rsquo;t go down.
+              </span>
             </h1>
             <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
               Backend developer focused on distributed systems, data
@@ -199,14 +201,19 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <Button asChild size="lg">
+          <div className="-mx-4 flex w-[calc(100%+2rem)] flex-col gap-2 px-4 sm:mx-0 sm:w-auto sm:flex-row sm:items-center sm:gap-3 sm:px-0">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href="#work">
                 See selected work
                 <ArrowRight data-icon="inline-end" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto"
+            >
               <Link href="https://github.com/adib" target="_blank">
                 <FaGithub data-icon="inline-start" />
                 GitHub
@@ -221,11 +228,11 @@ export default function Home() {
         {/* Stats */}
         <section className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="bg-background p-6">
-              <div className="font-mono text-2xl font-semibold tracking-tight sm:text-3xl">
+            <div key={s.label} className="bg-background p-4 sm:p-6">
+              <div className="font-mono text-xl font-semibold tracking-tight sm:text-3xl">
                 {s.value}
               </div>
-              <div className="mt-1 text-xs text-muted-foreground sm:text-sm">
+              <div className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-sm">
                 {s.label}
               </div>
             </div>
@@ -403,17 +410,17 @@ export default function Home() {
               aria-hidden
               className="pointer-events-none absolute -bottom-32 -left-24 size-80 rounded-full bg-[radial-gradient(ellipse_at_center,var(--glow-accent),transparent_70%)] blur-3xl"
             />
-            <CardContent className="grid gap-10 p-8 sm:p-12 md:min-h-[480px] md:grid-cols-2 md:gap-12">
+            <CardContent className="grid gap-8 p-5 sm:gap-10 sm:p-12 md:min-h-[480px] md:grid-cols-2 md:gap-12">
               {/* Left — pitch + primary CTA */}
-              <div className="flex flex-col justify-between gap-8">
-                <div className="space-y-5">
+              <div className="flex flex-col justify-between gap-6 sm:gap-8">
+                <div className="space-y-4 sm:space-y-5">
                   <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                     / contact
                   </p>
-                  <CardTitle className="text-3xl leading-[1.1] tracking-tight sm:text-4xl">
+                  <CardTitle className="text-2xl leading-[1.1] tracking-tight sm:text-4xl">
                     Let&rsquo;s build something reliable.
                   </CardTitle>
-                  <CardDescription className="max-w-md text-base leading-7">
+                  <CardDescription className="max-w-md text-sm leading-6 sm:text-base sm:leading-7">
                     Open to staff / senior backend roles and short-term
                     consulting on distributed systems, API design, or
                     observability. Fastest reply over email.
@@ -421,7 +428,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <Button asChild size="lg">
+                  <Button asChild size="lg" className="w-full sm:w-auto">
                     <Link href="mailto:adib@adib-the-noob.com">
                       <FaPaperPlane data-icon="inline-start" />
                       adib@adib-the-noob.com
@@ -438,8 +445,8 @@ export default function Home() {
               </div>
 
               {/* Right — social link list */}
-              <div className="flex flex-col justify-center gap-2 md:border-l md:border-border/60 md:pl-12">
-                <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              <div className="flex flex-col justify-center gap-1.5 md:gap-2 md:border-l md:border-border/60 md:pl-12">
+                <p className="mb-1 font-mono text-xs uppercase tracking-widest text-muted-foreground sm:mb-2">
                   / find me elsewhere
                 </p>
                 {(
@@ -511,17 +518,17 @@ export default function Home() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-3 rounded-md border border-transparent px-3 py-2.5 text-sm transition-colors hover:border-accent-cyan/30 hover:bg-accent-cyan/5"
+                    className="group flex items-center justify-between gap-2 rounded-md border border-transparent px-2.5 py-2 text-sm transition-colors hover:border-accent-cyan/30 hover:bg-accent-cyan/5 sm:gap-3 sm:px-3 sm:py-2.5"
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="flex size-8 items-center justify-center rounded-md border border-border/60 bg-background/50 text-muted-foreground transition-colors group-hover:border-accent-pink/50 group-hover:text-accent-pink">
-                        <Icon className="size-4" />
+                    <span className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-md border border-border/60 bg-background/50 text-muted-foreground transition-colors group-hover:border-accent-pink/50 group-hover:text-accent-pink sm:size-8">
+                        <Icon className="size-3.5 sm:size-4" />
                       </span>
-                      <span className="font-medium">{label}</span>
+                      <span className="truncate font-medium">{label}</span>
                     </span>
-                    <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <span className="font-mono">{handle}</span>
-                      <ArrowUpRight className="size-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
+                    <span className="flex min-w-0 items-center gap-1.5 text-[10px] text-muted-foreground sm:gap-2 sm:text-xs">
+                      <span className="truncate font-mono">{handle}</span>
+                      <ArrowUpRight className="size-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100 sm:size-3.5" />
                     </span>
                   </Link>
                 ))}
