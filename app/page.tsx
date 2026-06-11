@@ -154,18 +154,24 @@ const services = [
 export default function Home() {
   return (
     <div className="relative min-h-screen w-full">
-      {/* Subtle ambient glow at the top of the page. No grid, no rules. */}
+      {/* Ice & Plasma — soft ambient glow centered above the page. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-64 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_18%,transparent),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-64 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,var(--glow-primary),transparent_70%)] blur-3xl"
       />
 
       <main className="mx-auto w-full max-w-5xl px-6 pb-24">
         {/* Hero */}
         <section className="flex flex-col items-start gap-8 pt-12 pb-20 sm:pt-20">
-          <Badge variant="secondary" className="rounded-full px-3 py-1 font-mono">
-            <span className="mr-1.5 size-1.5 rounded-full bg-emerald-500" />
-            open to staff & senior backend roles
+          <Badge
+            variant="secondary"
+            className="rounded-full border border-accent-cyan/30 bg-accent-cyan/5 px-3 py-1 font-mono text-foreground/80"
+          >
+            <span className="relative mr-1.5 flex size-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-cyan/60" />
+              <span className="relative inline-flex size-2 rounded-full bg-accent-cyan" />
+            </span>
+            open to staff &amp; senior backend roles
           </Badge>
 
           <div className="flex items-center gap-5">
@@ -227,7 +233,7 @@ export default function Home() {
         </section>
 
         {/* Stack */}
-        <section id="stack" className="mt-24 scroll-mt-20">
+        <section id="stack" className="mt-32 scroll-mt-28">
           <div className="mb-8 flex items-end justify-between">
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -257,7 +263,7 @@ export default function Home() {
         </section>
 
         {/* Services */}
-        <section className="mt-24 grid gap-4 md:grid-cols-3">
+        <section className="mt-32 grid gap-4 md:grid-cols-3">
           {services.map(({ icon: Icon, title, body }) => (
             <Card key={title} className="bg-card/50 backdrop-blur">
               <CardHeader>
@@ -276,7 +282,7 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="mt-24 scroll-mt-20">
+        <section id="experience" className="mt-32 scroll-mt-28">
           <div className="mb-8">
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               / experience
@@ -330,7 +336,7 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="work" className="mt-24 scroll-mt-20">
+        <section id="work" className="mt-32 scroll-mt-28">
           <div className="mb-8">
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               / selected work
@@ -386,11 +392,16 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mt-24 scroll-mt-20">
+        <section id="contact" className="mt-32 scroll-mt-28">
           <Card className="relative overflow-hidden border-border/60 bg-gradient-to-br from-card to-card/40">
+            {/* Ice & Plasma — two-tone ambient glow (cyan + plasma). */}
             <div
               aria-hidden
-              className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_22%,transparent),transparent_70%)] blur-3xl"
+              className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-[radial-gradient(ellipse_at_center,var(--glow-primary),transparent_70%)] blur-3xl"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-32 -left-24 size-80 rounded-full bg-[radial-gradient(ellipse_at_center,var(--glow-accent),transparent_70%)] blur-3xl"
             />
             <CardContent className="grid gap-10 p-8 sm:p-12 md:min-h-[480px] md:grid-cols-2 md:gap-12">
               {/* Left — pitch + primary CTA */}
@@ -417,9 +428,9 @@ export default function Home() {
                     </Link>
                   </Button>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground sm:ml-2">
-                    <span className="relative flex size-1.5">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60" />
-                      <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
+                    <span className="relative flex size-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-aqua/60" />
+                      <span className="relative inline-flex size-2 rounded-full bg-accent-aqua" />
                     </span>
                     <span className="font-mono">usually replies within a day</span>
                   </div>
@@ -500,10 +511,10 @@ export default function Home() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-3 rounded-md border border-transparent px-3 py-2.5 text-sm transition-colors hover:border-border/60 hover:bg-background/50"
+                    className="group flex items-center justify-between gap-3 rounded-md border border-transparent px-3 py-2.5 text-sm transition-colors hover:border-accent-cyan/30 hover:bg-accent-cyan/5"
                   >
                     <span className="flex items-center gap-3">
-                      <span className="flex size-8 items-center justify-center rounded-md border border-border/60 bg-background/50 text-muted-foreground transition-colors group-hover:text-foreground">
+                      <span className="flex size-8 items-center justify-center rounded-md border border-border/60 bg-background/50 text-muted-foreground transition-colors group-hover:border-accent-pink/50 group-hover:text-accent-pink">
                         <Icon className="size-4" />
                       </span>
                       <span className="font-medium">{label}</span>
@@ -527,7 +538,7 @@ export default function Home() {
             © {new Date().getFullYear()} Adib — built with Next.js + shadcn/ui
           </p>
           <p className="font-mono">
-            <span className="text-emerald-500">●</span> all systems normal
+            <span className="text-accent-aqua">●</span> all systems normal
           </p>
         </div>
       </footer>

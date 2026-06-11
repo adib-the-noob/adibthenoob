@@ -39,6 +39,13 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  /* Ice & Plasma — brand accent layer (sits on top of the neutral base). */
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-pink-foreground: var(--accent-pink-foreground);
+  --color-accent-aqua: var(--accent-aqua);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-glow-primary: var(--glow-primary);
+  --color-glow-accent: var(--glow-accent);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -81,6 +88,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* Ice & Plasma — futuristic, slightly cyber. */
+  --accent-cyan: oklch(0.75 0.13 220);          /* ice cyan, anchor */
+  --accent-pink: oklch(0.65 0.22 340);          /* plasma pink, accent */
+  --accent-pink-foreground: oklch(0.99 0 0);
+  --accent-aqua: oklch(0.78 0.16 175);          /* aqua, success / live */
+  --glow-primary: oklch(0.75 0.13 220 / 28%);
+  --glow-accent: oklch(0.65 0.22 340 / 22%);
 }
 
 .dark {
@@ -115,6 +129,13 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  /* Ice & Plasma — slightly desaturated / brighter for dark surfaces. */
+  --accent-cyan: oklch(0.82 0.14 215);
+  --accent-pink: oklch(0.72 0.22 340);
+  --accent-pink-foreground: oklch(0.12 0 0);
+  --accent-aqua: oklch(0.84 0.16 175);
+  --glow-primary: oklch(0.82 0.14 215 / 35%);
+  --glow-accent: oklch(0.72 0.22 340 / 28%);
 }
 
 @layer base {

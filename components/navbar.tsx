@@ -135,9 +135,9 @@ export function Navbar({ className }: { className?: string }) {
           href="/"
           className="group flex items-center gap-2.5 font-mono text-sm text-foreground/90"
         >
-          <span className="relative flex size-7 items-center justify-center rounded-full border border-border/60 bg-background/60 transition-colors group-hover:border-emerald-500/50">
-            <span className="absolute inset-1 rounded-full bg-gradient-to-br from-emerald-400/30 to-cyan-400/20" />
-            <span className="relative size-1.5 rounded-full bg-emerald-500" />
+          <span className="relative flex size-7 items-center justify-center rounded-full border border-border/60 bg-background/60 transition-colors group-hover:border-accent-cyan/60">
+            <span className="absolute inset-1 rounded-full bg-gradient-to-br from-accent-cyan/40 to-accent-pink/30" />
+            <span className="relative size-1.5 rounded-full bg-accent-cyan shadow-[0_0_10px_var(--glow-primary)]" />
           </span>
           <span className="font-semibold tracking-tight">adib</span>
           <span className="hidden text-muted-foreground sm:inline">
@@ -150,10 +150,10 @@ export function Navbar({ className }: { className?: string }) {
           ref={containerRef}
           className="relative hidden items-center rounded-full border border-border/60 bg-background/60 p-1 shadow-[0_1px_0_0_color-mix(in_oklch,var(--foreground)_4%,transparent),0_8px_24px_-12px_color-mix(in_oklch,var(--foreground)_10%,transparent)] backdrop-blur sm:flex"
         >
-          {/* Sliding active highlight */}
+          {/* Sliding active highlight — Ice & Plasma cyan tint. */}
           <span
             aria-hidden
-            className="pointer-events-none absolute top-1 bottom-1 rounded-full bg-foreground/10 transition-[left,width,opacity] duration-300 ease-out"
+            className="pointer-events-none absolute top-1 bottom-1 rounded-full bg-accent-cyan/15 ring-1 ring-inset ring-accent-cyan/30 transition-[left,width,opacity] duration-300 ease-out"
             style={{
               left: highlight.left,
               width: highlight.width,
