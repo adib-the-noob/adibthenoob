@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // shadcn/ui generated code — keep aligned with upstream.
+    "components/ui/**",
+    "hooks/**",
   ]),
 ]);
 
